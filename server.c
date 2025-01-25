@@ -6,7 +6,7 @@
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:13:45 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/01/29 17:35:19 by ayaarab          ###   ########.fr       */
+/*   Updated: 2025/01/29 17:36:15 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	server_main(void)
 {
 	// struct s
 	
-	// while (1)
-	// {
-	// 	printf("this my PID %d\n", getpid());
-	// 	usleep(6 * 1000 * 1000);
-	// }
+	while (1)
+	{
+		printf("this my PID %d\n", getpid());
+		usleep(6 * 1000 * 1000);
+	}
 }

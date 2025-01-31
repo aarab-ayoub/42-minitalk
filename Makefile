@@ -4,7 +4,7 @@
 
 NAME = minitalk
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 
 CLIENT = client
 SERVER = server

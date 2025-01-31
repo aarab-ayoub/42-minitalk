@@ -6,7 +6,7 @@
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 14:57:16 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/01/30 14:57:32 by ayaarab          ###   ########.fr       */
+/*   Updated: 2025/01/31 11:35:49 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,17 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (sign * result);
+}
+
+void ft_putstr(char *str)
+{
+	int i;
+	i = 0;
+	if (!str)
+		return ;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }

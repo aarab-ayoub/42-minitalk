@@ -6,7 +6,7 @@
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:13:42 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/01/30 18:03:49 by ayaarab          ###   ########.fr       */
+/*   Updated: 2025/01/31 15:05:01 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,13 @@ void	send_message(int pid, char *message)
 				send_bit(pid, '1');
 			else
 				send_bit(pid, '0');
-			usleep(100);
+			usleep(500);
 			bit--;
 		}
 		i++;
 	}
-	send_bit(pid, '\0');
+	// send_bit(pid, '\0');
 }
-
 int	main(int argc, char **argv)
 {
 	int pid;

@@ -6,7 +6,7 @@
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:59:36 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/01/30 14:57:46 by ayaarab          ###   ########.fr       */
+/*   Updated: 2025/01/31 11:36:05 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,4 @@
 #include <limits.h>
 
 int	ft_atoi(char *str);
+void ft_putstr(char *str);

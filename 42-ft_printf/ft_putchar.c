@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 16:59:36 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/02/02 15:27:34 by ayaarab          ###   ########.fr       */
+/*   Created: 2024/11/04 13:50:38 by ayaarab           #+#    #+#             */
+/*   Updated: 2024/11/10 15:34:41 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42-ft_printf/ft_printf.h"
-#include <limits.h>
-#include <signal.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
-int	ft_atoi(char *str);
-void ft_putstr(char *str);
+int	ft_putchar(int c)
+{
+	write(1, &c, 1);
+	return (1);
+}

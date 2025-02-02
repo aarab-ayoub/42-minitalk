@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_putp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 16:59:36 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/02/02 15:27:34 by ayaarab          ###   ########.fr       */
+/*   Created: 2024/11/10 16:30:52 by ayaarab           #+#    #+#             */
+/*   Updated: 2024/11/10 16:32:33 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42-ft_printf/ft_printf.h"
-#include <limits.h>
-#include <signal.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
-int	ft_atoi(char *str);
-void ft_putstr(char *str);
+int	ft_putp(unsigned long n)
+{
+	int		count;
+	char	*hex;
+
+	hex = "0123456789abcdef";
+	count = 0;
+	if (n >= 16)
+		count += ft_putp(n / 16);
+	count += ft_putchar(hex[n % 16]);
+	return (count);
+}

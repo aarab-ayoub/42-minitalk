@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 16:59:36 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/02/02 15:27:34 by ayaarab          ###   ########.fr       */
+/*   Created: 2024/11/04 13:50:29 by ayaarab           #+#    #+#             */
+/*   Updated: 2024/11/19 12:12:05 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42-ft_printf/ft_printf.h"
-#include <limits.h>
-#include <signal.h>
-#include <unistd.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_atoi(char *str);
-void ft_putstr(char *str);
+# include <stdarg.h>
+# include <unistd.h>
+
+int	ft_putchar(int c);
+int	ft_putstr(const char *s);
+int	ft_putnbr(int n);
+int	ft_strlen(const char *str);
+int	ft_putu(unsigned int i);
+int	ft_puthex(unsigned int n, int a);
+int	ft_printf(const char *format, ...);
+int	ft_putp(unsigned long n);
+
+#endif   

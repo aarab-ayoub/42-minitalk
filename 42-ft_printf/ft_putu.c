@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_putu.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 16:59:36 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/02/02 15:27:34 by ayaarab          ###   ########.fr       */
+/*   Created: 2024/11/10 16:32:21 by ayaarab           #+#    #+#             */
+/*   Updated: 2024/11/15 19:15:34 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42-ft_printf/ft_printf.h"
-#include <limits.h>
-#include <signal.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
-int	ft_atoi(char *str);
-void ft_putstr(char *str);
+int	ft_putu(unsigned int i)
+{
+	int	count;
+
+	count = 0;
+	if (i > 9)
+	{
+		count += ft_putu(i / 10);
+		count += ft_putu(i % 10);
+	}
+	else
+		count += ft_putchar(i + '0');
+	return (count);
+}

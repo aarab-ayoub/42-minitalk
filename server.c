@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:13:45 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/02/02 00:37:45 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/02/02 01:37:43 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ void	handle_signal(int sig,siginfo_t *info, void *context)
 	static char	c = 0;
 
 	(void)context;
-	if(info->si_pid == 0)
-	{
-		ft_printf("Signal received from client: %d\n", info->si_pid);
-		// kill(info->si_pid, SIGUSR1);
-	}
 	if (sig == SIGUSR1)
 		c = c << 1 | 0;
 	else if (sig == SIGUSR2)
@@ -44,7 +39,6 @@ void	handle_signal(int sig,siginfo_t *info, void *context)
 		bit_count = 0;
 		c = 0;
 	}
-	// kill(info->si_pid, SIGUSR1);
 }
 
 int	main(void)
@@ -61,7 +55,7 @@ int	main(void)
 	// signal(SIGUSR1, handle_signal);
 	// signal(SIGUSR2, handle_signal);
 
-	ft_printf(GREEN "Server PID: %d\n" RESET, getpid());
+	printf(GREEN "Server PID: %d\n" RESET, getpid());
 
 	while (1)
 		pause();

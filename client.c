@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:13:42 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/02/02 00:26:51 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/02/01 23:22:46 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 
     if (argc != 3)
     {
-        ft_printf(RED "❌ Usage: %s <server_pid> <message>\n" RESET, argv[0]);
+        printf(RED "❌ Usage: %s <server_pid> <message>\n" RESET, argv[0]);
         return (1);
     }
     else
@@ -69,12 +69,12 @@ int	main(int argc, char **argv)
         pid = ft_atoi(argv[1]);
         if (pid <= 0)
         {
-            ft_printf(RED "❌ Invalid PID: %s\n" RESET, argv[1]);
+            printf(RED "❌ Invalid PID: %s\n" RESET, argv[1]);
             return (1);
         }
-        ft_printf(GREEN "✅ Sending message to PID %d...\n" RESET, pid);
+        printf(GREEN "✅ Sending message to PID %d...\n" RESET, pid);
         send_message(pid, argv[2]);
-        ft_printf(GREEN "✅ Message sent successfully! 🎉\n" RESET);
+        printf(GREEN "✅ Message sent successfully! 🎉\n" RESET);
     }
     return (0);
 }

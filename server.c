@@ -6,13 +6,16 @@
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:13:45 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/02/02 11:45:19 by ayaarab          ###   ########.fr       */
+/*   Updated: 2025/02/02 12:30:51 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	handle_signal(int sig, siginfo_t *info, void *context)
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
+
+void	handle_signal(int sig,siginfo_t *info, void *context)
 {
 	static int	bit_count = 0;
 	static char	c = 0;
@@ -47,7 +50,12 @@ int	main(void)
 	sigemptyset(&sa.sa_mask);
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
-	printf("Server PID: %d\n", getpid());
+
+	// signal(SIGUSR1, handle_signal);
+	// signal(SIGUSR2, handle_signal);
+
+	printf(GREEN "Server PID: %d\n" RESET, getpid());
+
 	while (1)
 		pause();
 	return (0);

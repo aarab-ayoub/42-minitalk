@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:13:42 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/02/02 15:35:33 by ayaarab          ###   ########.fr       */
+/*   Updated: 2025/02/05 15:50:26 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ void	send_bit(int pid, char bit)
 	else
 		kill(pid, SIGUSR2);
 	usleep(100);
+}
+
+void	success(int sig)
+{
+	if (sig == SIGUSR1)
+		ft_printf(GREEN "✅ Message sent successfully!\n" RESET);
 }
 
 void	send_message(int pid, char *message)
@@ -60,6 +66,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
+		signal(SIGUSR1, success);
 		pid = ft_atoi(argv[1]);
 		if (pid <= 0)
 		{
@@ -68,7 +75,6 @@ int	main(int argc, char **argv)
 		}
 		ft_printf(GREEN "✅ Sending message to PID %d...\n" RESET, pid);
 		send_message(pid, argv[2]);
-		ft_printf(GREEN "✅ Message sent successfully!\n" RESET);
 	}
 	return (0);
 }

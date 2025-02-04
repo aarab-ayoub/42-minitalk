@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayaarab <ayaarab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:13:45 by ayaarab           #+#    #+#             */
-/*   Updated: 2025/02/02 15:35:46 by ayaarab          ###   ########.fr       */
+/*   Updated: 2025/02/02 16:18:31 by ayaarab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	process_character(char c)
+void	process_character(char c, int pid)
 {
 	if (c == '\0')
 	{
 		write(1, "\n", 1);
+		kill(pid, SIGUSR1);
 	}
 	else
 	{
@@ -44,7 +45,7 @@ void	handle_signal(int sig, siginfo_t *info, void *context)
 	bit_count++;
 	if (bit_count == 8)
 	{
-		process_character(c);
+		process_character(c, pid);
 		bit_count = 0;
 		c = 0;
 	}
@@ -56,7 +57,6 @@ int	main(void)
 
 	sa.sa_sigaction = handle_signal;
 	sa.sa_flags = SA_SIGINFO;
-	sigemptyset(&sa.sa_mask);
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	ft_printf(GREEN "Server PID: %d\n" RESET, getpid());

@@ -99,7 +99,7 @@ The following functions are allowed for this project:
 ## 📚 Resources
 - [UNIX Signals](https://www.geeksforgeeks.org/signals-c-language/) – Signals in C language on signals.
 - [Inter-Process Communication (IPC)](https://en.wikipedia.org/wiki/Inter-process_communication) – Wikipedia article on IPC.
-- [Custom `ft_printf` Implementation](https://github.com/aarab-ayoub/42-ft_printf) – Link to your custom `ft_printf` implementation (if available).
+- [Custom `ft_printf` Implementation](https://github.com/aarab-ayoub/42-ft_printf) – Link to my custom `ft_printf` implementation .
 
 ---
 
